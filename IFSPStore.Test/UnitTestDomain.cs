@@ -58,6 +58,7 @@ namespace IFSPStore.Test
         {
             Cidade cidade = new Cidade(1, "Birigui", "SP");
             Cliente cliente = new Cliente(1, "Kayky", "Rua Noroeste", "Vila Roberto", "475.795.968-06", cidade);
+            Debug.Write(JsonSerializer.Serialize(cliente));
             Assert.AreEqual(cliente.Nome, "Kayky");
             Assert.AreEqual(cliente.Endereco, "Rua Noroeste");
             Assert.AreEqual(cliente.Bairro, "Vila Roberto");
@@ -72,6 +73,7 @@ namespace IFSPStore.Test
             Produto produto = new Produto(1, "Caderno", 20, 2, data, "Unidade 3", grupo);
             List<VendaItem> Itens = new List<VendaItem>();
             VendaItem vendaItem = new VendaItem(1, produto, 2, 10, 20, null);
+            Debug.Write(JsonSerializer.Serialize(vendaItem));
             Assert.AreEqual(vendaItem.Produto, produto);
             Assert.AreEqual(vendaItem.Quantidade, 2);
             Assert.AreEqual(vendaItem.ValorUnitario, 10);
